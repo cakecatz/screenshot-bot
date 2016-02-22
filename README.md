@@ -8,9 +8,10 @@ Take Screenshot of your service and post your Slack channel.
 
 2.  Add token into `config.json`
 
-    ```json
+    ```json5
       {
-        "token": "<slack token>"
+        "token": "<slack token>",
+        "imagePath": "/tmp", // optional
     }
     ```
 

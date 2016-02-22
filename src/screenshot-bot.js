@@ -12,11 +12,11 @@ const messageTypes = {
 };
 
 class ScreenshotBot {
-  constructor(token_) {
-    this.token = token_;
+  constructor(config) {
+    this.token = config.token;
     this.debug = true;
-    this.imagePath = os.tmpdir();
-    this.fileUpload = new SlackUpload(token_);
+    this.imagePath = config.imagePath || os.tmpdir();
+    this.fileUpload = new SlackUpload(this.token);
 
     this.controller = Botkit.slackbot({
       debug: this.debug,
